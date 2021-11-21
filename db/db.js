@@ -9,7 +9,7 @@ const options = {
 };
 
 
-mongoose.connect(`mongodb://localhost:27017/${DB}`, options).then(
+mongoose.connect(process.env.DB, options).then(
   () => {
     console.log("DB Ready To Use");
   },
