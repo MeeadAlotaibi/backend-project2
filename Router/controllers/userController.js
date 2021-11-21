@@ -1,10 +1,9 @@
-const someModel = require("./../../db/models/userSchema");
-const mongoose = require("mongoose");
+const userModel = require("./../../db/models/userSchema");
 
 const user = (req, res) => {
   const { username, email, password } = req.body;
 
-  const newuser = new someModel({
+  const newuser = new userModel({
     username,
     email,
     password,
@@ -21,7 +20,7 @@ const user = (req, res) => {
 };
 
 const alluser = (req, res) => {
-  someModel
+  userModel
     .find({})
     .then((result) => {
       res.send(result);
