@@ -12,10 +12,11 @@ const user = (req, res) => {
   newuser
     .save()
     .then((result) => {
-      res.json(result);
+      res.json(result); 
     })
     .catch((err) => {
       res.send(err);
+      
     });
 };
 
