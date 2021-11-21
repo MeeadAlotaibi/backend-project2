@@ -1,11 +1,12 @@
-const { models } = require("mongoose");
-const someModel = require("./../../db/models/someSchema");
+const dataModel = require("./../../db/models/dataSchema");
 
-const someFunc = (req, res) => {
-  const { someKey, someNumber } = req.body;
-  const newSomeData = new someModel({
-    someKey,
-    someNumber,
+const culture = (req, res) => {
+  const { img, title, description, cat } = req.body;
+  const newSomeData = new dataModel({
+    img,
+    title,
+    description,
+    cat,
   });
   newSomeData
     .save()
@@ -17,8 +18,8 @@ const someFunc = (req, res) => {
     });
 };
 
-const anotherFunc = (req, res) => {
-  someModel
+const allCulture = (req, res) => {
+  dataModel
     .find({})
     .then((result) => {
       res.send(result);
@@ -28,4 +29,4 @@ const anotherFunc = (req, res) => {
     });
 };
 
-models.exports = { someFunc, anotherFunc };
+module.exports = { culture, allCulture };
