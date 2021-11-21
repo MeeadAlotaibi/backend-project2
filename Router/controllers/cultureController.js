@@ -1,14 +1,14 @@
-const dataModel = require("./../../db/models/dataSchema");
+const cultureModel = require("./../../db/models/dataSchema");
 
 const culture = (req, res) => {
   const { img, title, description, cat } = req.body;
-  const newSomeData = new dataModel({
+  const newculture = new cultureModel({
     img,
     title,
     description,
     cat,
   });
-  newSomeData
+  newculture
     .save()
     .then((result) => {
       res.json(result);
@@ -19,8 +19,9 @@ const culture = (req, res) => {
 };
 
 const allCulture = (req, res) => {
-  dataModel
-    .find({})
+  const cat = req.body;
+  cultureModel
+    .find({ cat })
     .then((result) => {
       res.send(result);
     })

@@ -7,6 +7,8 @@ const cors = require("cors");
 //Router
 const userRouter = require("./Router/routes/userRoute"); // router level middleware
 const cultureRouter = require("./Router/routes/cultureRoute");
+const tourismRouter = require("./Router/routes/tourismRoute");
+const urbanRouter = require("./Router/routes/urbanRoute");
 
 /////////////////////////////////////////////
 const app = express();
@@ -18,6 +20,8 @@ app.use(express.json());
 
 app.use("/user", userRouter); // route
 app.use("/culture", cultureRouter); // route
+app.use("/tourism", tourismRouter); // route
+app.use("/urban", urbanRouter); // route
 
 /////////////////////////////////////////////
 
