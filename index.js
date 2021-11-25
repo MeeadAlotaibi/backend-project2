@@ -15,7 +15,8 @@ const app = express();
 dotenv.config();
 const PORT = process.env.PORT;
 app.use(express.json());
-
+app.use(morgan("dev"));
+app.use(cors());
 /////////////////////////////////////////////
 
 app.use("/user", userRouter); // route
@@ -24,9 +25,6 @@ app.use("/tourism", tourismRouter); // route
 app.use("/urban", urbanRouter); // route
 
 /////////////////////////////////////////////
-
-app.use(morgan("dev"));
-app.use(cors());
 
 /////////////////////////////////////////////
 

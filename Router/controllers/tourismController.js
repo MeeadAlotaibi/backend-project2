@@ -19,7 +19,7 @@ const tourism = (req, res) => {
 };
 
 const allTourism = (req, res) => {
-  const cat = req.body;
+  const cat = req.body.cat;
   tourismModel
     .find({ cat })
     .then((result) => {

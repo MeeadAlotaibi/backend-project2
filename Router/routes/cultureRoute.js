@@ -1,8 +1,15 @@
 const express = require("express");
-const { culture, allCulture } = require("../controllers/cultureController");
+const {
+  culture,
+  allCulture,
+  allallCulture,
+} = require("../controllers/cultureController");
 const cultureRouter = express.Router();
 
-cultureRouter.post("/culturee", culture);
-cultureRouter.get("/allculturee", allCulture);
+cultureRouter.delete("/deleteCulture", culture);
+
+cultureRouter.post("/culture", culture);
+cultureRouter.get("/allculture", allCulture);
+cultureRouter.get("/allallculture", allallCulture);
 
 module.exports = cultureRouter;

@@ -18,8 +18,20 @@ const culture = (req, res) => {
     });
 };
 
+const allallCulture = (req, res) => {
+  cultureModel
+    .find({})
+    .then((result) => {
+      res.send(result);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+};
+/////////////////////
 const allCulture = (req, res) => {
-  const cat = req.body;
+  //search
+  const { cat } = req.query;
   cultureModel
     .find({ cat })
     .then((result) => {
@@ -30,4 +42,4 @@ const allCulture = (req, res) => {
     });
 };
 
-module.exports = { culture, allCulture };
+module.exports = { culture, allCulture, allallCulture };
