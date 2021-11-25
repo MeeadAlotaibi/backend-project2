@@ -19,7 +19,7 @@ const urban = (req, res) => {
 };
 
 const allUrban = (req, res) => {
-  //   const cat = req.body;
+  const cat = req.body.cat;
   urbanModel
     .find({})
     .then((result) => {
