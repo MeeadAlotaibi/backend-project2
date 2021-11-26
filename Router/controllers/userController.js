@@ -1,7 +1,8 @@
 const userModel = require("./../../db/models/userSchema");
 
-//// Add new user
-//// sign up
+//// sign up - Add new user //// 
+
+
 const user = (req, res) => {
   const { username, email, password } = req.body;
   const newuser = new userModel({
@@ -19,7 +20,6 @@ const user = (req, res) => {
       res.status(400).send(err);
     });
 };
-////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 
 //sign in
@@ -148,9 +148,9 @@ const favoriteUserTest = (req, res) => {
 };
 /////////////////////////////////////////////////////////
 const getFavorite = (req, res) => {
-  const { email } = req.params;
+  const { email } = req.query;
   userModel
-    .find({ email: email })
+    .find({ email })
     .populate("favoriteSchema")
     .exec()
     .then((result) => {
