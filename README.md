@@ -26,7 +26,6 @@ For running the server in development mode, and execute:
 
 ``` npm run start ```
 
-To run the server on production mode.
 
 ---
 
